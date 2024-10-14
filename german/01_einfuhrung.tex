@@ -1,0 +1,181 @@
+\section{Einführung}
+Wenn geladene, schwere Teilchen (z.B. $\alpha$-Teilchen oder schwere Ionen) mit hoher Geschwindigkeit in Materie eindringen, dann geben sie ihre Energie in sehr vielen Zusammenstößen mit den Atomen ab. Dabei gibt es eine Besonderheit: je langsamer sie werden, umso größer ist die abgegebene Energie (sog. Bragg-Kurve). Am GSI Helmholtzzentrum für Schwerionenforschung in Darmstadt wird diese Eigenschaft beispielsweise im Bereich der medizinischen Forschung zur Bestrahlung von Tumoren genutzt.
+
+In diesem Versuch wird Alphastrahlung aus einer Mischquelle mit drei Isotopen mit einem Oberflächensperrschichtzähler gemessen. Ziel ist es, die Strahlung der drei Isotope zu untersuchen. Hierfür werden Energiespektren aufgenommen und daraus die Reichweiten und Bragg-Kurven der Strahlung bestimmt. Dabei werden Sie den Alphazerfall kennenlernen und einen Einblick in die Funktionsweise von Halbleiterdetektoren, die technische Verarbeitung von Signalen und die Auswertung der Daten am Computer erhalten.
+
+Am Versuchstag werden Sie anhand von drei Aufgaben durch den Versuch geführt. Die Aufgaben 1 und 2 befassen sich hauptsächlich mit der Charakterisierung des Versuchsaufbaus und Aufgabe 3 untersucht dann, wie die Alphastrahlung sich im Medium Luft verhält.
+
+\paragraph*{Was Sie wissen müssen, um den Versuch durchzuführen:}
+Das nötige Vorwissen für diesen Versuch erstreckt sich auf drei Bereiche: die Theorie des Alphazerfalls, der Energieverlust von geladenen Teilchen in Materie und die Funktionsweise von Halbleiterdetektoren. Die Themen werden in den Unterkapiteln von Abschnitt \ref{sec:theory} kurz vorgestellt.
+
+Für die Versuchsdurchführung ist jedoch noch mehr Wissen nötig, das Sie sich in einer kleinen Literaturrecherche selbst aneignen sollen. Bereiten Sie deshalb bitte die am Ende jedes Unterkapitels angegebenen Themen für den Versuchstag sorgfältig vor. 
+Dafür empfehlen sich insbesondere zwei Bücher: "`Teilchendetektoren"' \cite{kolanoski} und "`Teilchen und Kerne"' \cite{povh-rith}, die über die Universitätsbibliothek als PDF-Datei verfügbar sind (Stand Januar 2023).
+
+Nach dem Studium dieser Themen sollten Sie unter anderem die folgenden Fragen beantworten können:
+%
+\begin{itemize}[itemsep=0pt]
+	\item Wie entstehen die Alphateilchen, die in diesem Versuch untersucht werden?
+	\item Welche Eigenschaft der Alphateilchen kann mit dem Versuch gemessen werden? 
+	\item Hat diese Eigenschaft einen konstanten Wert oder ist sie bei jedem Teilchen anders?
+	\item Wie erzeugen die Teilchen ein Signal im Halbleiterdetektor und wie wird das Signal ausgelesen?
+	\item Welche Messwerte (Signalwerte) erwarten Sie?
+	\item Was sind die hauptsächlichen Quellen von Messungenauigkeiten?
+	\item Was ist ein Histogramm?
+	\item Welche Informationen stecken in dem Spektrum, das am Computer aufgezeichnet wird?
+	\item Wie erhält man aus dem Spektrum die gesuchte Observable (z.B. Energieverlust pro Wegstrecke)?
+	\item Was passiert, wenn Luft in der Apparatur ist?
+	%Den Bogen Schlagen von Physik Observable zu Messgröße und Messmethode und zurück
+\end{itemize}
+\newpage
+\section{Theoretischer Hintergrund}
+\label{sec:theory}
+%
+\subsection{Alphazerfall}
+Alpha"=Teilchen sind identisch mit Helium"=Kernen ( $^4_2$He$^{2+}$ ), sie bestehen also aus jeweils zwei Protonen und Neutronen. Die Bindungsenergie der Nukleonen solcher Alpha"=Teilchen ist stark im Vergleich zu Kernen ähnlicher Größe und beträgt ungefähr 7 MeV pro Nukleon. Die typische kinetische Energie von Alpha"=Teilchen, welche aus natürlichen Zerfällen von radioaktiven Isotopen stammen, liegt im Bereich von $3-8$ MeV \cite{povh-rith}, weitere Eigenschaften können Tabelle \ref{tab:alpha} entnommen werden.
+\begin{table}[h]
+	\centering
+	\begin{tabular}{lc}
+		Masse $m_\alpha$    & 3727.3 MeV$/c^{2}$ \\
+		Massenzahl A        & 4    \\
+		Kernladungszahl Z   & 2    \\
+		Bindungsenergie B   & 28.3 MeV \\
+	\end{tabular}
+	\caption{Eigenschaften der Alpha"=Teilchen.}\label{tab:alpha}
+\end{table}
+
+Die Massenzahl des Kerns nimmt beim Alphazerfall um vier Einheiten ab, die Kernladungszahl um zwei Einheiten. Bezeichnet $X$ das Mutter- und $Y$ das Tochternuklid, $\Delta E$  die beim Zerfall frei werdende Energie, und werden wie üblich Massenzahlen $A$ oben und Ordnungszahlen $Z$ unten angeschrieben, gilt für den Alphazerfall allgemein \cite{dewiki:240085809}: 
+\begin{equation*}
+	^{A}_{Z}X \longrightarrow \ ^{A-4}_{Z-2}Y + \ ^4_2\text{He}^{2+} + \Delta E
+\end{equation*}
+
+Beim Alphazerfall wird eine genau definierte Menge an Energie in Form von kinetischer Energie freigesetzt, die der Bindungsenergie des Systems entspricht. Dies ist dank des Phänomens des Massendefekts möglich, bei dem die Masse eines Systems geringer ist als die Summe der Massen seiner Bestandteile. Bei den meisten Alphazerfällen geht der Tochterkern direkt in den Grundzustand über, und die kinetische Energie wird ausschließlich von dem Alphateilchen aufgenommen, wodurch ein monoenergetisches Spektrum entsteht. Es sind jedoch auch Zerfälle in angeregte Zustände des Tochterkerns möglich, bei denen die kinetische Energie zwischen den beiden Teilchen geteilt wird (obwohl das Alpha-Teilchen den größten Teil davon behält), und das Energiespektrum zeigt mehrere monoenergetische Linien, die jeweils einem Zerfall in einen dieser Zustände entsprechen \cite{leo}. Dieses Spektrum ist charakteristisch für das jeweilige Radionuklid und kann daher zu dessen Bestimmung verwendet werden \cite{dewiki:240085809}.
+
+Bevor der Zerfall stattfindet, wird das Alphateilchen einerseits durch die starke Wechselwirkung vom Kern angezogen, aber zugleich aufgrund gleichnamiger Ladungen elektrisch abgestoßen. Die stärkere Kernkraft hat eine kurze, die schwächere elektrostatische Abstoßung eine lange Reichweite. Daher bildet das Potential eine Art Barriere, den Coulombwall (siehe Abb. \ref{fig:coulomb-barriere}). Der Wall ist höher als die für das Alphateilchen verfügbare kinetische Energie. Das Alphateilchen wäre daher nach der klassischen Physik stabil im Kern gebunden; mittels des quantenmechanischen Tunneleffekts kann es ihn jedoch verlassen. Die Wahrscheinlichkeit pro Zeitspanne hierfür kann sehr klein sein. Sie bestimmt die Halbwertszeit des Zerfalls. Der beobachtete Zusammenhang zwischen der Halbwertszeit und der Energie der emittierten Alphateilchen wird durch die Geiger-Nuttall-Regel beschrieben, informieren Sie sich dazu auch über die Gamow-Theorie. \cite{dewiki:240085809}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\linewidth]{img/Tunneleffekt_alpha_zerfall.png}
+	\caption{Potentielle Energie des Alpha-Teilchens $V(r)$ in Abhängigkeit von seinem Abstand zum Kern $r$. Im negativen Bereich sieht man das durch die starke Kernkraft verursachte Anziehungspotential, im positiven Bereich die Coulombbarriere \cite{img:coulombwall}.}
+	\label{fig:coulomb-barriere}
+\end{figure}
+
+Die in diesem Versuch untersuchten Alpha"=Teilchen werden von einer Mischquelle, bestehend aus drei verschiedenen Isotopen ($^{239}$Pu, $^{241}$Am, $^{244}$Cm), emittiert. In dem gemessenen Energiespektrum (siehe Abb. \ref{fig:spectrum}) des Alpha"=Strahlers sind neben den Hauptzerfallskanälen auch noch einige Nebenprozesse sichtbar, welche mithilfe der Zerfallstafeln in Abbildung \ref{fig:schemata} identifiziert werden können.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[width=0.9\linewidth]{img/Referenzmessung.pdf}
+		\caption{Gemessenes Zerfallsspektrum der verwendeten Mischquelle.}
+		\label{fig:spectrum}
+	\end{center}
+\end{figure}
+%
+\begin{figure}
+	\begin{center}
+		\subcaptionbox{Plutonium}{ \input{img/decay_Pu239} }
+		\subcaptionbox{Americium}{ \input{img/decay_Am241} }
+		\subcaptionbox{Curium}{ \input{img/decay_Cm244} }
+		\caption{Zerfallsschemata der Nuklide des Alphastrahlers. \\Datenquellen: Pu~\cite{NDS2014}, Am~\cite{NDS2006}, Cm~\cite{NDS2008}}
+		\label{fig:schemata}
+	\end{center}
+\end{figure}
+%
+\paragraph{Themen zur Vorbereitung}
+\begin{itemize}
+	\item Bindungsenergie von Atomkernen, Massendefekt
+	\item Nuklidkarte, Stabilität von Kernen
+	\item Abstandsquadratgesetz
+	%\item Magische Zahlen (Schalenmodell des Atomkerns).
+	%\item Alpha-Zerfall allgemein.
+	\item Linienspektrum des Alphazerfalls
+	\item Eigenschaften der Nukleonen
+	\item Gamow-Theorie des Alphazerfalls, Gamow-Faktor, Lebensdauer, Potenzial des Atomkerns, Tunneleffekt
+\end{itemize}
+\FloatBarrier
+\subsection{Wechselwirkung von geladenen Teilchen in Materie}
+% Geiger-Nuttall-Regel
+% citation for ionsation potential in air:
+% http://onlinelibrary.wiley.com/doi/10.1002/andp.19614630504/abstract;jsessionid=E4B5E16EA9E0D4DAD7454073D3773C23.f02t02
+Beim Durchdringen von Materie verlieren Alpha"=Teilchen ihre Energie im Wesentlichen durch Ionisation und Anregung der Atome im Material. Da sie deutlich massiver sind als die Elektronen des Materials ($m_\alpha \approx 8000\ m_{e}$) mit denen sie wechselwirken, passieren sie das Material ohne große Ablenkungen. Der mittlere Energieverlust pro Weglänge wird durch die Bethe"=Bloch"=Formel beschrieben \cite{kolanoski}. Er hängt von den Eigenschaften des Mediums sowie von der Ladung und der Geschwindigkeit des Teilchens ab.
+\begin{equation}
+	\left\langle - \frac{dE}{dx} \right\rangle = K \frac{Z}{A} \frac{z^2}{\beta^2} \ \left[ \frac{1}{2} \ln \left( \frac{2 m_e c^2 \beta^2 \gamma^2 T_{max}}{I^2} \right) - \beta^2 - \frac{\delta(\beta\gamma)}{2} \right] 
+\end{equation}
+\begin{itemize}[itemsep=0pt, label=-]
+	\item $K=4\pi N_A r_e^2 m_e c^2 = 0.307\ \text{MeV cm}^2 / \text{mol} $ mit $r_e \approx 2.8$ fm;
+	\item $z$ Ladungszahl, $\beta = v / c$ Geschwindigkeit des Projektilteilchens;
+	\item $Z$ Kernladungszahl und $A$ Massenzahl des Mediums;
+	\item $I$ ist die mittlere Energie, die notwendig ist zur Ionisation des Mediums;
+	\item $T_{max}$ ist der maximale Energieübertrag auf ein Hüllenelektron, der sich beim zentralen Stoß ergibt. $\approx 2 m_e c^2 (\beta\gamma)^2$;
+	\item $\delta$ ist die sogenannte Dichtekorrektur, die bei hohen Energien wichtig wird.
+\end{itemize}
+
+Der Verlauf des mittleren Energieverlustes ist in Abbildung \ref{fig:bethecurve} dargestellt. Für kleine Teilchengeschwindigkeiten ist der Kurvenverlauf ungefähr proportional zu $1/\beta^2$. Das bedeutet, je langsamer die Teilchen werden, desto größer wird ihr Energieverlust pro zurückgelegter Wegstrecke. Daraus resultiert der Verlauf der Bragg - Kurve, der in Abbildung \ref{fig:braggpeak} zu sehen ist.
+
+Typischerweise haben Alphateilchen aus Kernzerfällen eine kinetische Energie von ungefähr 
+$E_{kin} = 5$~MeV, also einen Impuls von $ p = \sqrt{2 \ m \ E_{kin} } = 195$~MeV$/c$ und es ist $p/mc = 0.052$, sie bewegen sich mit circa $5\%$ der Lichtgeschwindigkeit.
+Damit sind sie wesentlich langsamer als beispielsweise e$^+$/e$^-$ aus $\beta$-Zerfällen oder Neutronenstrahlung.
+
+\paragraph{Themen zur Vorbereitung}
+\begin{itemize}
+	\item Energieverlust geladener Teilchen in Materie
+	\item Bethe-Bloch-Kurve
+	\item Bragg-Kurve
+	\item Reichweite und Abschirmung von Strahlung
+	\item Energie-Straggeling
+\end{itemize}
+
+%
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/bethe_curve.png}
+	\caption{Verlauf des mittleren Energieverlusts von geladenen Teilchen in Materie als Funktion von $p/mc$. \cite{kolanoski} }
+	\label{fig:bethecurve}
+\end{figure}
+%
+%
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/bragg_peak.png}
+	\caption{Bragg Peak. Energieverlust pro Wegstrecke als Funktion der bereits zurückgelegten Wegstrecke. Hier am Beispiel von Protonen in Wasser. \cite{kolanoski}}
+	\label{fig:braggpeak}
+\end{figure}
+\FloatBarrier
+%
+\subsection{Halbleiterdetektoren}
+Zum Nachweis von Alphastrahlung, beispielsweise zu Strahlenschutzzwecken, eignen sich im Prinzip alle Teilchendetektoren. Allerdings muss die Strahlung das Innere des Detektors, das empfindliche Volumen, erreichen können; ein Zählrohr muss dazu ein genügend dünnes Folienfenster haben. Für genaue Messungen, etwa zur Bestimmung des Energiespektrums der Strahlung, müssen sich Strahlenquelle und Detektor in einem gemeinsamen Vakuum befinden. Dabei wird meist ein Halbleiterdetektor verwendet. \cite{dewiki:240085809}
+
+Im Grunde sind Silizium-Halbleiterdetektoren relativ große p-n-Halbleiterdioden mit einem sehr dünnen Eintrittsfenster für geladene Teilchen, das minimalem Energieverlust bietet. Sie werden in Sperrrichtung betrieben, sodass durch eine angelegte Spannung freie Ladungsträger aus dem sensitiven Volumen (Verarmungszone) der Diode gesaugt werden. Abbildung \ref{fig:surfacebarrier} zeigt den Aufbau des in diesem Experiment verwendeten Detektors. 
+
+Wenn ein geladenes Teilchen, etwa ein Alpha-Teilchen, in den Detektor eindringt, verliert es einen geringen Teil seiner Energie am dünnen Eintrittsfenster. Der Großteil seiner Energie wird in der Verarmungszone durch Ionisation der Silizium-Atome deponiert. Die Anzahl der Elektron-Loch-Paare, welche durch diesen Prozess erzeugt werden, ist proportional zur Energie des einfallenden Teilchens. Die freie Ladung, erzeugt durch die Ionisation, wird von den Elektroden abgesaugt und mithilfe der Kondensatoren des über den Konnektor verbundenen Vorverstärkers aufgesammelt. Die gesammelte Ladung resultiert in einem Spannungspuls, welcher von der Kapazität des Vorverstärkers und der Ladungsmenge bestimmt ist und innerhalb von bis zu $100$~ns ansteigt. Die Amplitude des Spannungspulses ist proportional zur Energie des gemessenen Alpha-Teilchens und kann mithilfe eines Vielkanal-Impulshöhen-Analysators (MCA) zur Auswertung weiterverarbeitet werden.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/surface_barrier}
+	\caption{Aufbau des Oberflächensperrschichtzählers \cite{leo}.}
+	\label{fig:surfacebarrier}
+\end{figure}
+
+Halbleiterdetektoren können in einem großflächigen Energiebereich für Elektronen mit etwa 20~keV bis zu schweren Ionen mit 200~MeV eingesetzt werden. Die Effizienz von Halbleiterdetektoren im aktiven Volumen beträgt annähernd 100\%, während die Proportionalität von der Energie geladener Teilchen zur Pulshöhe über einen weiten Bereich konstant ist. Durch den weitverbreiteten Einsatz von Siliziumtransistoren sind die verwendeten Halbleiterdetektoren zudem noch sehr kostengünstig.
+
+\paragraph{Themen zur Vorbereitung}
+\begin{itemize}
+	\item Halbleiter, Dotierung, Diode, p-n-Übergang, Diffusionsspannung.
+	\item Energiedeposition, Bildung und Rekombination von Ladungsträgern.
+	\item Energieauflösung des Halbleiterdetektors.
+	\item Thermisches Rauschen, Energie pro Elektron-Loch-Paar.
+	\item Poisson Statistik, Fano-Faktor (siehe \cite[Kap. 17.10.2]{kolanoski})
+\end{itemize}
+
+%\begin{figure}
+%	\begin{center}
+%		\includegraphics[0.95\textwidth]{figs/signal_chain.pdf}
+%		\caption{Verkabelung} \label{fig:verkabelung}
+%	\end{center}
+%\end{figure}
+
+%\subsection{Signalverarbeitung}
+% details Signalverarbeitung :
+% was macht der Vorverstaerker
+% was macht der Hauptverstaerker
+% was macht der ADC
+% was ist ein Vielkanalanalysator, was ist ein Kanal
+
+% Bildliche Darstellungen

@@ -1,0 +1,127 @@
+\documentclass{scrartcl}
+\KOMAoptions{
+	%DIV=calc,
+	DIV=13,
+	fontsize=11pt,
+	paper=a4,
+}
+\linespread{1.2}
+
+\usepackage[utf8]{inputenc} % input-encoding
+\usepackage[ngerman]{babel} % deutsche überschriften und silbentrennung
+\usepackage{csquotes} % empfohlen bei der verwendung von babel
+\usepackage[T1]{fontenc} % mitteleuropäische schriftcodierung mit umlauten etc
+\usepackage{lmodern} % lmodern schriften sind schöner als standard
+
+\usepackage{graphicx} % wird benötigt um jpg, pdf, png und tiff bilder einzubinden 
+\usepackage{float} % platziert float umgebungen mit H an der stelle an der sie eingebunden werden
+\usepackage[section]{placeins} % verhindert, dass Floats hinter dem Befehl \FloatBarrier erscheinen, der mit der option section bei jeder section automatisch gesetzt wird
+\usepackage{subcaption}
+
+\usepackage{textcomp} % mehr sonderzeichen
+\usepackage{amsmath} % macht mathemathische formeln besser
+\usepackage{amsfonts} % macht mathemathische formeln besser
+\usepackage{amssymb} % macht mathemathische formeln besser
+
+\usepackage[usenames, dvipsnames]{xcolor}
+\definecolor{linkblue}{RGB}{12,77,160}
+\definecolor{darkgreen}{RGB}{48, 168, 40}
+\definecolor{pflaume}{RGB}{110, 3, 156}
+\definecolor{light-gray}{RGB}{220, 220, 220}
+
+\usepackage{tikz}
+\usepackage{enumitem}
+
+\usepackage[]{hyperref}  % fügt in der pdf datei u.a. bessere Links ein
+\hypersetup{
+	%hidelinks,
+	colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=linkblue,          % color of internal links (change box color with linkbordercolor)
+	citecolor=darkgreen,        % color of links to bibliography
+	filecolor=pflaume,         % color of file links
+	urlcolor=pflaume,        % color of external links
+	pdftitle={Alphaspektroskopie mit einem Halbleiterdetektor},    % title
+	pdfauthor={Dennis Spicker},     % author
+	pdfsubject={Versuchsanleitung},   % subject of the document
+}
+
+
+\begin{document}
+\begin{titlepage}
+	\newcommand{\HRule}{\rule{\textwidth}{0.5mm}}
+	\begin{center}
+	{\includegraphics[width=0.3\linewidth]{img/GU-Logo-blau-CMYK} \hfill
+	\includegraphics[width=0.3\linewidth]{img/IKF_Logo} \\ }
+	\vspace{1cm}
+	\HRule
+	\vspace{0.4cm}
+	{\huge Versuch 12} \\
+	\vspace{0.5cm}
+	{\huge {\bfseries Alphaspektroskopie}} \\
+	\vspace{0.2cm}
+	\HRule
+	\vfill
+	\includegraphics[width=12cm]{img/front_cover.png}
+	\vfill
+	{\Large\bfseries Fortgeschrittenen Praktikum} \\
+	\vspace{0.3cm}
+	{\Large am Institut für Kernphysik} \\
+	\vspace{1.5cm}
+	{\small 
+		Dennis Spicker \\
+		Mai 2024
+	}
+	\end{center} 
+	\thispagestyle{empty}
+	\clearpage
+\end{titlepage}
+
+\tableofcontents
+\clearpage
+
+
+
+
+
+\input{01_einfuhrung.tex}
+\input{02_versuch.tex}
+\input{03_aufgaben.tex}
+
+
+\clearpage
+\begin{thebibliography}{1}
+	\bibitem{kolanoski} 
+	Kolanoski, H., Wermes, N., 2016. \emph{Teilchendetektoren}. Springer-Verlag Berlin Heidelberg. \textsc{doi:} \url{https://doi.org/10.1007/978-3-662-45350-6}
+	
+	\bibitem{povh-rith}
+	Povh, B., Rith, K. u.a., 2014. \emph{Teilchen und Kerne}. Springer-Verlag Berlin Heidelberg. \textsc{doi:} \url{https://doi.org/10.1007/978-3-642-37822-5}
+	
+	\bibitem{leo}
+	Leo, W.R., 1994. \emph{Techniques for Nuclear and Particle Physics Experiments: A How-To Approach}. Springer Berlin / Heidelberg. ISBN 9783642579202. 
+	
+	\bibitem{pdg}
+	Particle Data Group, Workman, R. L. u.a., 2022, \emph{Review of Particle Physics}, \textsc{in:} Progress of Theoretical and Experimental Physics 2022, Issue 8, 083C01, \textsc{doi:} \url{https://doi.org/10.1093/ptep/ptac097}
+	
+	\bibitem{NDS2014} % Quelle für Energien von Plutonium
+	Browne, E., Tuli, J.K. 2014. Nuclear Data Sheets 122, 205 (2014). \url{https://www.nndc.bnl.gov/nudat3/decaysearchdirect.jsp?nuc=239Pu&unc=NDS}
+	
+	\bibitem{NDS2006} % Quelle für Energien von Americium
+	Basunia, M.S., 2006. Nuclear Data Sheets 107, 3323 (2006). \url{https://www.nndc.bnl.gov/nudat3/decaysearchdirect.jsp?nuc=241Am&unc=NDS}
+	
+	\bibitem{NDS2008} % Quelle für Energien von Curium
+	Singh, B., Browne, E., 2008. Nuclear Data Sheets 109, 2439 (2008). \url{https://www.nndc.bnl.gov/nudat3/decaysearchdirect.jsp?nuc=244Cm&unc=NDS}
+
+	\bibitem{bleck-neuhaus}
+	Bleck-Neuhaus, J., 2013. \emph{Elementare Teilchen: Von den Atomen über das Standard-Modell bis zum Higgs-Boson}. Springer-Verlag Berlin Heidelberg. 2. Aufl. \textsc{doi:} \url{https://doi.org/10.1007/978-3-642-32579-3}
+	
+	\bibitem{dewiki:240085809}
+	Wikipedia, 2023, \emph{Alphastrahlung}, \url{https://de.wikipedia.org/w/index.php?title=Alphastrahlung&oldid=240085809},
+	[Online; Stand 5. März 2024]
+	
+	\bibitem{img:coulombwall}
+	Johannes Schneider, CC BY-SA 4.0, \url{ https://commons.wikimedia.org/w/index.php?curid=61182444}
+\end{thebibliography}
+
+
+	
+\end{document}

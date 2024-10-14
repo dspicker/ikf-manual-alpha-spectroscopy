@@ -1,0 +1,164 @@
+% !TeX spellcheck = en_US
+\section{Introduction}
+When charged heavy particles (e.g. $\alpha$-particles or heavy ions) move through matter, they release their energy in the many collisions they make with the atoms. The more collisions they make, the slower they become and the greater the transferred energy. This phenomena is described by the so-called Bragg curve. At GSI Helmholtzzentrum für Schwerionenforschung in Darmstadt, for example, this feature is used in the field of medical research to irradiate tumors.
+
+In this experiment, alpha radiation from a mixed source with three isotopes is measured with a surface barrier counter. The aim is to assess the radiation of the three isotopes by recording their energy spectra and determining the ranges and Bragg curves of the radiation. You will learn about alpha decay and gain an insight into the functioning of semiconductor detectors, the technical processing of signals and data analysis on the computer.
+
+On the day of the lab course, you will be guided through the experiment by completing three tasks. Tasks 1 and 2 mainly deal with the characterization of the experimental set-up and Task 3 then examines how alpha radiation behaves in air.
+
+\paragraph*{What you need to know to carry out the experiment:}
+The necessary prior knowledge for this experiment covers three areas: the theory of alpha decay, the energy loss of charged particles in matter and how semiconductor detectors work. The topics are briefly introduced in the following subsections of section \ref{sec:theory}.
+
+However, more knowledge is needed to carry out the experiment, which you should acquire yourself in a small literature search. Therefore, please carefully prepare beforehand the topics given at the end of each subsection. There are two books which are particularly recommended for this literature search: \textit{Particle Detectors: Fundamentals and Applications} \cite{kolanoski} and \textit{Particles and Nuclei} \cite{povh-rith}. Both are available as PDF files in the University library (as of January 2023).
+
+After studying these topics, you should be able to answer the following questions, among others:
+\begin{itemize}[itemsep=0pt]
+	\item How are the $\alpha$-particles investigated in this experiment produced?
+	\item Which feature of $\alpha$-particles can be measured with this experiment? 
+	\item Does this feature have a constant value or is it different for each particle?
+	\item How do the particles generate a signal in the semiconductor detector and how is the signal read out?
+	\item What measured values (signal values) do you expect?
+	\item What are the main sources of measurement inaccuracies?
+	\item What is a histogram?
+	\item What information is contained in the spectrum that is recorded on the computer?
+	\item How do you obtain the observable you are looking for from the spectrum (e.g. energy loss per distance)?
+	\item What happens when there is air in the apparatus?
+\end{itemize}
+%
+\newpage
+\section{Theoretical Background}
+\label{sec:theory}
+%
+\subsection{Alpha Decay}
+
+$\alpha$-particles are identical to helium nuclei ($^4_2$He$^{2+}$), i.e. they consist of two protons and two neutrons. Their binding energy is high compared to nuclei of similar size and is approximately 7 MeV per nucleon. The typical kinetic energy of $\alpha$-particles which originate from natural decays of radioactive isotopes is in the range of $3-8$ MeV  \cite{povh-rith}. Further properties can be found in Table \ref{tab:alpha}.
+\begin{table}[h]
+	\centering
+	\begin{tabular}{lc}
+		Mass $m_\alpha$    & 3727.3 MeV$/c^{2}$ \\
+		Mass number $A$        & 4    \\
+		Atomic number $Z$   & 2    \\
+		Binding energy $B$   & 28.3 MeV \\
+	\end{tabular}
+	\caption{Properties of $\alpha$-particles.}\label{tab:alpha}
+\end{table}
+
+Let $X$ denote the parent nuclide, $\Delta E$ its binding energy, $Y$ the daughter nuclide, $A$ the mass number and $Z$ the atomic number. Then the alpha decay process can be expressed as \cite{dewiki:240085809}:
+\begin{equation*}
+	^{A}_{Z}X \longrightarrow \ ^{A-4}_{Z-2}Y + \ ^4_2\text{He}^{2+} + \Delta E
+\end{equation*}
+
+Alpha decay releases a well-defined amount of energy in the form of kinetic energy, which corresponds to the binding energy of the system. This is possible thanks to the mass defect phenomena, in which the mass of a system is less than the sum of the masses of its constituents. 
+In most alpha decays, the daughter nucleus goes directly to the ground state and the kinetic energy is taken solely by the $\alpha$-particle, creating a monoenergetic spectrum. However, decays to excited states of the daughter nucleus are also possible, in which the kinetic energy is thus shared between the two particles (although the $\alpha$-particle still keeps most of it) and the energy spectrum shows several monoenergetic lines, each corresponding to a decay to one of these states \cite{leo}. This spectrum is characteristic of the respective radionuclide and can therefore be used to determine it \cite{dewiki:240085809}.
+
+Before the decay takes place, when the $\alpha$-particle is still inside the nucleus, it is attracted to it by the strong interaction, while also being electrically repelled by the protons in the nucleus. The strong nuclear force has a short range, while the weaker electrostatic repulsion has a long range. The potential therefore forms a kind of barrier, known as the Coulomb barrier, which is higher than the kinetic energy available to the $\alpha$-particle (see Fig. \ref{fig:coulomb-barrier}). According to classical physics, the $\alpha$-particle would therefore be stably bound in the nucleus; however, it can leave it by means of the quantum mechanical tunnel effect. The probability per time span for this can be very small and determines the half-life of the decay. The observed relationship between the half-life and the energy of the emitted $\alpha$-particles is described by the Geiger-Nuttall rule (see also the Gamow theory \cite{dewiki:240085809}.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\linewidth]{img/tunneleffect_alpha_decay.png}
+	\caption{Potential energy of the $\alpha$-particle $V(r)$ as a function of its distance to the nucleus $r$. In the negative range, one sees the attractive potential caused by the strong nuclear force, and, in the positive range, the Coulomb barrier. \cite{img:coulombwall}}
+	\label{fig:coulomb-barrier}
+\end{figure}
+
+In this experiment, the $\alpha$-particles are emitted from a mixed source composed of $^{239}$Pu, $^{241}$Am and $^{244}$Cm. Figure \ref{fig:spectrum} shows the measured decay spectrum of this mixed source. In addition to the main decay channels, one can see some extra secondary processes, which can be identified by the decay diagrams of Figure \ref{fig:schemata}.
+
+\paragraph{Topics for preparation}
+\begin{itemize}
+	\item Binding energy of atomic nuclei, mass defect
+	\item Nuclide map, stability of nuclei
+	\item Distance square law
+	\item Line spectrum of alpha decay
+	\item Properties of nucleons
+	\item Gamow theory of alpha decay, Gamow factor, lifetime, potential of the atomic nucleus, tunnel effect
+\end{itemize}
+
+\begin{figure}
+	\begin{center}
+		%%\resizebox{0.8\textwidth}{!}{ \input{figs/Referenzmessung.tex} }
+		\includegraphics[width=0.9\linewidth]{img/Referenzmessung.pdf}
+		\caption{Measured decay spectrum of the mixed source used in the experiment.}
+		\label{fig:spectrum}
+	\end{center}
+\end{figure}
+%
+\begin{figure}
+	\begin{center}
+		\subcaptionbox{Plutonium}{ \input{img/decay_Pu239} }
+		\subcaptionbox{Americium}{ \input{img/decay_Am241} }
+		\subcaptionbox{Curium}{ \input{img/decay_Cm244} }
+		\caption{Decay diagrams of the alpha emitters: Pu~\cite{NDS2014}, Am~\cite{NDS2006} and Cm~\cite{NDS2008}.}
+		\label{fig:schemata}
+	\end{center}
+\end{figure}
+\FloatBarrier
+%
+\subsection{Interaction of charged particles in matter}
+When passing through matter, $\alpha$-particles essentially lose their energy through ionization and excitation of the atoms in the material. As $\alpha$-particles are significantly more massive than the electrons of the material ($m_\alpha \approx 8000\ m_{e}$) with which they interact, they pass through the material without major deflections. The average energy loss per path length is described by the Bethe-Bloch formula \cite{kolanoski}. It depends on the properties of the medium as well as the charge and velocity of the particle.
+\begin{equation}
+	\left\langle - \frac{dE}{dx} \right\rangle = K \frac{Z}{A} \frac{z^2}{\beta^2} \ \left[ \frac{1}{2} \ln \left( \frac{2 m_e c^2 \beta^2 \gamma^2 T_{max}}{I^2} \right) - \beta^2 - \frac{\delta(\beta\gamma)}{2} \right] 
+\end{equation}
+\begin{itemize}[itemsep=0pt, label=-]
+	\item $K=4\pi N_A r_e^2 m_e c^2 = 0.307\ \text{MeV cm}^2 / \text{mol} $ mit $r_e \approx 2.8$ fm;
+	\item $z$ charge number, $\beta = v / c$ velocity of the projectile particle;
+	\item $Z$ atomic number and $A$ mass number of the medium;
+	\item $I$ average excitation potential of the atoms;
+	\item $T_{max}$ maximum possible energy transfer to a shell electron, which is $\approx 2 m_e c^2 (\beta\gamma)^2$ in a central collision;
+	\item $\delta$ density correction, which is important at high energies.
+\end{itemize}
+
+The Bethe-Bloch curve is shown in Figure \ref{fig:bethecurve}. For low particle velocities, the curve is approximately proportional to $1/\beta^2$. This means that the slower the particles become, the greater their energy loss per distance traveled. This results in the shape of the Bragg curve, which can be seen in Figure \ref{fig:braggpeak}.
+
+Typically, $\alpha$-particles from nuclear decay have a kinetic energy of approximately 
+$E_{kin} = 5$~MeV, i.e. a momentum of $p = \sqrt{2 \ m \ E_{kin} } = 195$~MeV$/c$ and it is $p/mc = 0.052$; they move at around $5\%$ of the speed of light.
+This makes them considerably slower than e$^+$/e$^-$ from $\beta$ decays or neutron radiation, for example. 
+%
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/bethe_curve.png}
+	\caption{Average energy loss of charged particles in matter as a function of $p/mc$ \cite{kolanoski}.}
+	\label{fig:bethecurve}
+\end{figure}
+%
+\paragraph{Topics for preparation}
+\begin{itemize}
+	\item Energy loss of charged particles in matter
+	\item Bethe-Bloch curve
+	\item Bragg peak
+	\item Radiation range and shielding
+	\item Energy straggling
+\end{itemize}
+%
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/bragg_peak.png}
+	\caption{Energy loss per distance traveled as a function of the distance already traveled, for protons in water. One can see the Bragg peak. \cite{kolanoski}}
+	\label{fig:braggpeak}
+\end{figure}
+\FloatBarrier
+%
+\subsection{Semiconductor detectors}
+In principle, all particle detectors are suitable for detecting alpha radiation, for example for radiation protection purposes. However, the radiation must be able to reach the inside of the detector, i.e. the sensitive volume, and the counting tube must have a sufficiently thin foil window. For precise measurements, for example to determine the energy spectrum of the radiation, the radiation source and the detector must be in the same vacuum chamber. A semiconductor detector is usually used for this \cite{dewiki:240085809}.
+
+Silicon semiconductor detectors are relatively large p-n semiconductor diodes with a very thin entrance window for charged particles, which offers minimal energy loss. They are operated in the reverse direction so that free charge carriers are sucked out of the sensitive volume (depletion zone) of the diode by an applied voltage. Figure \ref{fig:surfacebarrier} shows the structure of the detector used in this experiment. 
+
+When a charged particle, such as an $\alpha$-particle, enters the detector, it loses a small part of its energy at the thin entrance window. The majority of its energy is deposited in the depletion zone by ionization of the silicon atoms. The number of electron-hole pairs generated by this process is proportional to the energy of the incoming particle. The free charge generated by the ionization is extracted from the electrodes and collected by the capacitors of the preamplifier connected via the connector. The collected charge results in a voltage pulse, which is determined by the capacitance of the preamplifier and the amount of charge and rises within up to $100$~ns. The amplitude of the voltage pulse is proportional to the energy of the measured $\alpha$-particle and can be further processed for evaluation using a multichannel pulse height analyzer (MCA).
+
+%
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{img/surface.png}
+	\caption{Structure of the surface barrier layer counter \cite{leo}.}
+	\label{fig:surfacebarrier}
+\end{figure}
+
+\hfill
+\hfill
+
+Semiconductor detectors can be used in a wide energy range, namely for electrons with about 20 keV up to heavy ions with 200 MeV. Their efficiency in the active volume is close to $100\%$, while the proportionality of charged particle energy to pulse height is constant over a wide range. In this experiment, a silicon semiconductor detector will be used for $\alpha$-particle spectroscopy.
+\paragraph{Topics for preparation}
+\begin{itemize}
+	\item Semiconductors, doping, diode, p-n junction, diffusion voltage
+	\item Energy deposition, formation and recombination of charge carriers
+	\item Energy resolution of the semiconductor detector
+	\item Thermal noise, energy per electron-hole pair
+	\item Poisson statistics, Fano factor (see \cite[Kap. 17.10.2]{kolanoski})
+\end{itemize}
