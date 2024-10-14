@@ -48,24 +48,6 @@ Gehen Sie diese Checkliste gemeinsam mit dem/der Betreuer:in durch:
 \end{enumerate}
 
 %
-\subsection{Fehlerbehandlung}
-Alle Daten, die Sie darstellen, sollten sowohl mit x- als auch mit y-Fehlerbalken dargestellt werden. Wenn nötig, führen Sie die Fehlerfortpflanzung mit
-
-\begin{equation}\label{eq:RSS}
-		\sigma_{f} = \sqrt{\left( \frac{\partial f}{\partial x_1}\sigma_{x_1} \right)^2 + \left( \frac{\partial f}{\partial x_2}\sigma_{x_2} \right)^2 + ... + \left( \frac{\partial f}{\partial x_n}\sigma_{x_n} \right)^2} 
-\end{equation}
-
-oder 
-
-\begin{equation}\label{eq:abs}
-		\sigma_{f} = \left| \frac{\partial f}{\partial x1}\right| \sigma_{x1} + \left| \frac{\partial f}{\partial x2}\right| \sigma_{x2} + ... + \left| \frac{\partial f}{\partial xn}\right| \sigma_{xn}
-\end{equation}
-
-ob alle Fehler unabhängig und zufällig sind oder nicht, und wobei $f$ die von den Variablen $x_1, x_2, ..., x_n$ abhängige Funktion ist; $\sigma_{f, x_1, x_2,..., x_n}$ ist die Standardabweichung von $f$, $x_1$, $x_2$, ..., $x_n$. Weisen Sie Ihre Berechnungen in Ihrem Bericht explizit aus.
-%
-
-Übersetzt mit DeepL.com (kostenlose Version)
-
 \subsection{Aufgabe 1: Sättigungsspannung}
 Ziel der ersten Aufgabe ist die Bestimmung der Sättigungsspannung des Halbleiterdetektors. Die Messung erfolgt im Vakuum bei kleinstmöglichem Abstand $r_{rel} = 0$ mm.
 \begin{enumerate}[label=\textbf{\alph*)}]
@@ -145,9 +127,10 @@ Im letzten Teil des Versuches wird differenzielle Energieverlust der Alphastrahl
 	\item Schätzen Sie die unterschiedlichen Beiträge ab, die in die Energieauflösung einfließen. Betrachten Sie die Detektorauflösung aus der Vakuum"= und der Luft"=Messung. Diskutieren Sie hierbei die Bedeutung des elektronischen Rauschens, der statistischen Schwankungen in der Anzahl der Elektronen"=Loch"=Paare (Fanofaktor), sowie die endliche Dicke des Strahler-Präparats und das Energiestraggeling.
 \end{enumerate}
 %
-
-\noindent
-Denken Sie beim Schreiben des Protokolls auch an eine Fehlerbetrachtung und fügen entsprechende Fehlerbalken in die Diagramme ein. Reichen Sie zusammen mit dem Protokoll auch Ihre Original-Messdaten als ordentliche \texttt{.txt}-Datei ein, mit entsprechenden Kommentaren, um die Daten den jeweiligen Messungen zuordnen zu können. Der Aufbau des Protokolls sollte sich an den folgenden Punkten orientieren: 
+%
+\subsection{Das Protokoll}
+Reichen Sie zusammen mit dem Protokoll Ihre Original-Messdaten als ordentliche \texttt{.txt}-Datei ein, mit entsprechenden Kommentaren, um die Daten den jeweiligen Messungen zuordnen zu können. Der Aufbau des Protokolls sollte sich an den folgenden Punkten orientieren: 
+%
 \begin{itemize}
 	\item Theorieteil
 	\item Durchführung und Auswertung
@@ -160,3 +143,19 @@ Denken Sie beim Schreiben des Protokolls auch an eine Fehlerbetrachtung und füg
 	\end{itemize}
 	\item Fazit
 \end{itemize}
+%
+\subsubsection*{Fehlerbehandlung}
+Alle Daten in Ihren Diagrammen sollten sowohl mit x- als auch mit y-Fehlerbalken dargestellt werden.
+Sie erhalten bei der Durchführung des Experimentes aus den Gauß-Fits bereits die Standardabweichungen zu den Messwerten. 
+Für die übrigen Messwerte können Sie jeweils Annahmen zur Unsicherheit machen. 
+Erstellen Sie Tabellen mit Messwerten und zugehörigen Unsicherheiten und weisen Sie die zur Berechnung verwendeten Formeln explizit aus.
+Bei Größen, die aus mehreren (fehlerbehafteten) Messwerten ausgerechnet werden, führen Sie Gaußsche Fehlerfortpflanzung durch:
+\begin{equation}\label{eq:RSS}
+	\sigma_{f} = \sqrt{\left( \frac{\partial f}{\partial x_1}\ \sigma_{x_1} \right)^2 + \left( \frac{\partial f}{\partial x_2}\ \sigma_{x_2} \right)^2 + ... + \left( \frac{\partial f}{\partial x_n}\ \sigma_{x_n} \right)^2} 
+\end{equation}
+Hierbei errechnet sich die Messunsicherheit $\sigma_{f}$ von der Größe $f = f (x_1, x_2, ... , x_n)$, die abhängig ist von den Messwerten $x_1, x_2, ... , x_n$ und deren Unsicherheiten $\sigma_{x_1}, \sigma_{x_2}, ..., \sigma_{x_n}$. 
+
+
+
+
+
