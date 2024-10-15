@@ -68,14 +68,13 @@ Ziel der ersten Aufgabe ist die Bestimmung der Sättigungsspannung des Halbleite
 \end{enumerate}
 
 \subsection{Aufgabe 2: Kalibrierung und Nullabstand}
-Nun wird eine Energiekalibrierung des Multi-Channel-Analysators durchgeführt und der Null-Abstand $r_0$ zwischen Detektor und Quelle bestimmt. Die Messungen finden im Vakuum statt.
+Nun wird eine Energiekalibrierung des Multi-Channel-Analysators durchgeführt und der Nullabstand $r_0$ zwischen Detektor und Quelle bestimmt. Die Messungen finden im Vakuum statt.
 
 \begin{enumerate}[label=\textbf{\alph*)}]
 	\item Stellen Sie die in Aufgabe 1 ermittelte Spannung $U_{\text{Det.}}$ an der Spannungsversorgung ein.
-	\item Zeichnen Sie ein Referenzspektrum mit mindestens 12000 Counts bei $r_{rel} = 0$ mm auf.
-		\\ Speichern Sie einen Screenshot des Referenzspektrums für Ihr Protokoll.
+	\item Zeichnen Sie ein Referenzspektrum mit mindestens 12000 Counts bei $r_{rel} = 0$ mm auf. Speichern Sie einen Screenshot des Referenzspektrums für Ihr Protokoll.
 		\\ \textit{Optional:} Speichern Sie das Histogramm als \verb|.txt| Datei ab. Dies ermöglicht die Wiederholung der Kalibrierung zu Hause. 
-	\item Kalibrieren Sie den Multi-Channel-Analyzer in der Software. \\Bestimmen Sie dazu die Position der drei Hauptmaxima im Histogramm per Gauß-Fit und verwenden Sie die passenden Austrittsenergien aus Abbildung \ref{fig:schemata}.
+	\item Kalibrieren Sie den Multi-Channel-Analyzer in der Software. \\Bestimmen Sie dazu die Position der drei Hauptmaxima im Histogramm per Gauß-Fit und verwenden Sie die passenden Austrittsenergien aus Abbildung~\ref{fig:schemata}.
 	
 	Führen Sie die Gauß-Fits erneut durch, um die kalibrierten Werte für Positionen [keV] und Halbwertsbreiten [keV] sowie die Zählraten [1/s] zu erhalten.
 	\item Zeichnen Sie bei den relativen Abständen $r_{rel} = 5, 10, 15, 20, 30$ mm jeweils mindestens 3000 Counts auf und bestimmen Sie auch hier per Gauß-Fit die kalibrierten Positionen, Halbwertsbreiten und Zählraten der drei Hauptmaxima.
@@ -86,21 +85,15 @@ Nun wird eine Energiekalibrierung des Multi-Channel-Analysators durchgeführt un
 	\begin{equation}
 		Z \propto \frac{1}{r^2_{eff}}
 	\end{equation}
-	umgeformt und geschickt grafisch dargestellt werden kann, um den Nullabstand direkt vom y-Achsenabschnitt ablesen zu können. $Z$ ist hier die Zählrate $[1/s]$. Geben Sie auch das gemittelte Ergebnis aus den Messungen aller drei Isotope an.
+	umgeformt und geschickt grafisch dargestellt werden kann, um den Nullabstand direkt vom y-Achsenabschnitt ablesen zu können. $Z$ ist hier die Zählrate $[1/s]$. Errechnen Sie das gemittelte Ergebnis aus den Messungen aller drei Isotope und stellen alle Werte in einer Tabelle dar.
 
-    \textit{Anmerkung}: Betrachten Sie die Fehlerbalken und entscheiden Sie, ob Sie den Mittelwert oder den gewichteten Mittelwert mit varianzdefinierten Gewichten verwenden, um das Endergebnis $r_0$ zu erhalten. Letzteres ist definiert durch 
+    \textit{Anmerkung}: Betrachten Sie die Fehlerbalken und entscheiden Sie, ob Sie den einfachen oder den gewichteten Mittelwert verwenden, um das Endergebnis zu erhalten. Siehe hierzu Gleichung~\eqref{eq:weighted_mean} auf Seite~\pageref{eq:weighted_mean} im Anhang.
+	
 
-    \begin{subequations}\label{eq:weightmean}
-    \begin{align}
-		\overline{r_0} = \frac{\sum_i w_i r_{0,i}}{\sum_i w_i} \\
-        \textnormal{mit Gewichten} w_i = \left( \Delta r_{0,i} \right)^{-2} \\\
-        \textnormal{und Fehler } \Delta \overline{r_0} = \left( \sum_i w_i \right)^{-1/2}
-    \end{align}
-    \end{subequations}
 \end{enumerate}
 
 \subsection{Aufgabe 3: Reichweite in Luft}
-Im letzten Teil des Versuches wird differenzielle Energieverlust der Alphastrahlung in Luft bestimmt.
+Im letzten Teil des Versuches wird der differenzielle Energieverlust der Alphastrahlung in Luft bestimmt.
 
 \begin{enumerate}[label=\textbf{\alph*)}]
 	\item Schließen Sie das Entlüftungsventil der Vakuumkammer. Öffnen Sie danach langsam das Belüftungsventil, bis der Atmosphärendruck in der Kammer hergestellt ist. Schließen Sie dann das Belüftungsventil wieder.
@@ -114,13 +107,13 @@ Im letzten Teil des Versuches wird differenzielle Energieverlust der Alphastrahl
 	\item \textit{Am Versuchstag:} Stellen Sie die $\alpha$-Energie $E\, \widehat{=}\, \mu$ abhängig vom effektiven Abstand für Plutonium grafisch dar.
 	
 	\textit{Im Protokoll:} Stellen Sie für alle drei Isotope die $\alpha$-Energie $E\, \widehat{=}\, \mu$, die prozentuale Auflösung und die Zählrate jeweils in Abhängigkeit vom effektiven Abstand grafisch dar.
-	\item Bestimmen Sie näherungsweise -- durch Extrapolation mit dem Auge -- die Reichweite der $\alpha$-Teilchen und ihre Austrittsenergie anhand des Graphen, der effektiven Abstand gegen Energie zeigt. Wodurch wird die Unsicherheit der Ergebnisse am stärksten beeinflusst?
+	\item Bestimmen Sie näherungsweise -- durch Extrapolation mit dem Auge -- die Reichweite der $\alpha$-Teilchen ($R$) und ihre Austrittsenergie ($E_0$) anhand des Graphen, der effektiven Abstand gegen Energie zeigt. Wodurch wird die Unsicherheit der Ergebnisse am stärksten beeinflusst?
 	
 	Vergleichen Sie in einer Tabelle die Ergebnisse mit den Literaturwerten. Verwenden Sie dazu die angegebenen Austrittsenergien und das empirische Reichweitengesetz von Geiger, welches die Reichweite $R$ [mm] abhängig von der Austrittsenergie $E_0$ [MeV] der $\alpha$-Teilchen angibt:
 	\begin{equation}\label{eq:geigerreachlaw}
 		R = 3.1 \cdot \left(E_0\right)^{3/2}
 	\end{equation}
-	\textit{Optional:} Wenn Gleichung \ref{eq:geigerreachlaw} entsprechend umgeformt und angepasst wird, eignet sie sich als Fit-Funktion für die Daten. Damit können Reichweite und Austrittsenergie genauer als mit dem Auge bestimmt werden.
+	\textit{Optional:} Wenn Gleichung~\eqref{eq:geigerreachlaw} entsprechend umgeformt und angepasst wird, eignet sie sich als Fit-Funktion für die Daten. Damit können Reichweite und Austrittsenergie genauer als mit dem Auge bestimmt werden.
 	\item \textit{Am Versuchstag:} Stellen Sie den differenziellen Energieverlust in Abhängigkeit des effektiven Abstands für Plutonium dar $\left( \Delta E/ \Delta x \ \text{vs.}\ r_{eff} \right)$.
 	
 	\textit{Im Protokoll:} Fügen Sie die Bragg-Kurven der anderen beiden Isotope hinzu. Schätzen Sie den Höchstwert des Energieverlusts und den Energieverlust in der Nähe der Probe. Vergleichen Sie die drei Kurven miteinander.
@@ -128,32 +121,6 @@ Im letzten Teil des Versuches wird differenzielle Energieverlust der Alphastrahl
 \end{enumerate}
 %
 %
-\subsection{Das Protokoll}
-Reichen Sie zusammen mit dem Protokoll Ihre Original-Messdaten als ordentliche \texttt{.txt}-Datei ein, mit entsprechenden Kommentaren, um die Daten den jeweiligen Messungen zuordnen zu können. Der Aufbau des Protokolls sollte sich an den folgenden Punkten orientieren: 
-%
-\begin{itemize}
-	\item Theorieteil
-	\item Durchführung und Auswertung
-	\begin{itemize}
-		\item Was soll gemessen werden und warum?
-		\item Welche Messergebnisse werden erwartet?
-		\item Wie wird die Messung durchgeführt?
-		\item Was wurde tatsächlich gemessen? Wie groß sind die Messfehler?
-		\item Was kann aus dem Messergebnis gelernt werden? Wurden die Erwartungen erfüllt? Was sind die Fehlerquellen?
-	\end{itemize}
-	\item Fazit
-\end{itemize}
-%
-\subsubsection*{Fehlerbehandlung}
-Alle Daten in Ihren Diagrammen sollten sowohl mit x- als auch mit y-Fehlerbalken dargestellt werden.
-Sie erhalten bei der Durchführung des Experimentes aus den Gauß-Fits bereits die Standardabweichungen zu den Messwerten. 
-Für die übrigen Messwerte können Sie jeweils Annahmen zur Unsicherheit machen. 
-Erstellen Sie Tabellen mit Messwerten und zugehörigen Unsicherheiten und weisen Sie die zur Berechnung verwendeten Formeln explizit aus.
-Bei Größen, die aus mehreren (fehlerbehafteten) Messwerten ausgerechnet werden, führen Sie Gaußsche Fehlerfortpflanzung durch:
-\begin{equation}\label{eq:RSS}
-	\sigma_{f} = \sqrt{\left( \frac{\partial f}{\partial x_1}\ \sigma_{x_1} \right)^2 + \left( \frac{\partial f}{\partial x_2}\ \sigma_{x_2} \right)^2 + ... + \left( \frac{\partial f}{\partial x_n}\ \sigma_{x_n} \right)^2} 
-\end{equation}
-Hierbei errechnet sich die Messunsicherheit $\sigma_{f}$ von der Größe $f = f (x_1, x_2, ... , x_n)$, die abhängig ist von den Messwerten $x_1, x_2, ... , x_n$ und deren Unsicherheiten $\sigma_{x_1}, \sigma_{x_2}, ..., \sigma_{x_n}$. 
 
 
 

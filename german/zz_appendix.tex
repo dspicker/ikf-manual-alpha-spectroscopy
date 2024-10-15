@@ -1,0 +1,44 @@
+\newpage
+\appendix
+%
+\section{Anhang}\label{sec:appendix}
+%
+\subsection{Das Protokoll}
+Reichen Sie zusammen mit dem Protokoll Ihre Original-Messdaten als ordentliche \texttt{.txt}-Datei ein, mit entsprechenden Kommentaren, um die Daten den jeweiligen Messungen zuordnen zu können. Der Aufbau des Protokolls sollte sich an den folgenden Punkten orientieren: 
+%
+\begin{itemize}
+	\item Theorieteil
+	\item Durchführung und Auswertung
+	\begin{itemize}
+		\item Was soll gemessen werden und warum?
+		\item Welche Messergebnisse werden erwartet?
+		\item Wie wird die Messung durchgeführt?
+		\item Was wurde tatsächlich gemessen? Wie groß sind die Messfehler?
+		\item Was kann aus dem Messergebnis gelernt werden? Wurden die Erwartungen erfüllt? Was sind die Fehlerquellen?
+	\end{itemize}
+	\item Fazit
+\end{itemize}
+%
+\subsubsection*{Fehlerbehandlung}
+Alle Daten in Ihren Diagrammen sollten sowohl mit x- als auch mit y-Fehlerbalken dargestellt werden.
+Sie erhalten bei der Durchführung des Experimentes aus den Gauß-Fits bereits die Standardabweichungen zu den Messwerten. 
+Für die übrigen Messwerte können Sie jeweils sinnvolle Annahmen zur Unsicherheit machen. 
+Erstellen Sie Tabellen mit Messwerten und zugehörigen Unsicherheiten und weisen Sie die zur Berechnung verwendeten Formeln explizit aus.
+Bei Größen, die aus mehreren (fehlerbehafteten) Messwerten ausgerechnet werden, führen Sie Gaußsche Fehlerfortpflanzung durch:
+\begin{equation}\label{eq:RSS}
+	\sigma_{f} = \sqrt{\left( \frac{\partial f}{\partial x_1}\ \sigma_{x_1} \right)^2 + \left( \frac{\partial f}{\partial x_2}\ \sigma_{x_2} \right)^2 + ... + \left( \frac{\partial f}{\partial x_n}\ \sigma_{x_n} \right)^2} 
+\end{equation}
+Hierbei errechnet sich die Messunsicherheit $\sigma_{f}$ von der Größe $f = f (x_1, x_2, ... , x_n)$, die abhängig ist von den Messwerten $x_1, x_2, ... , x_n$ und deren Unsicherheiten $\sigma_{x_1}, \sigma_{x_2}, ..., \sigma_{x_n}$. 
+%
+\subsection{Anmerkungen}
+%
+\paragraph{Der gewichtete Mittelwert}
+$\overline{x}$ von mehreren Messwerten $x_i$ einer Messgröße $x$ ist definiert als
+\begin{subequations}\label{eq:weighted_mean}
+    \begin{align}
+    \overline{x} & = \frac{\sum\limits_{i}\ w_i \ x_{i}}{\sum\limits_{i} \ w_i }  \label{eq:wmean}\\
+    \text{mit Gewichten } \quad w_i & = (\Delta x_{i})^{-2} \\
+    \text{und Unsicherheit } \quad \Delta \overline{x} & = \left(  \sum\limits_{i} w_i  \right)^{-\frac{1}{2}} \label{eq:wmeanerr}
+    \end{align}
+\end{subequations}
+hierbei ist $\Delta x_i$ die Unsicherheit der $i$-ten Einzelmessung.
