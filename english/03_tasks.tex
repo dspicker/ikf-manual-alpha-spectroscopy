@@ -48,22 +48,6 @@ Go through this checklist together with the supervisor:
 	\item Start MCA3 Software on the PC.
 \end{enumerate}
 %
-\subsection{Error handling}
-All the data you plot should be presented with both x- and y-errors bars. Whenever necessary, perform error propagation using
-
-\begin{equation}\label{eq:RSS}
-		\sigma_{f} = \sqrt{\left( \frac{\partial f}{\partial x_1}\sigma_{x_1} \right)^2 + \left( \frac{\partial f}{\partial x_2}\sigma_{x_2} \right)^2 + ... + \left( \frac{\partial f}{\partial x_n}\sigma_{x_n} \right)^2} 
-\end{equation}
-
-or 
-
-\begin{equation}\label{eq:abs}
-		\sigma_{f} = \left| \frac{\partial f}{\partial x1}\right| \sigma_{x1} + \left| \frac{\partial f}{\partial x2}\right| \sigma_{x2} + ... + \left| \frac{\partial f}{\partial xn}\right| \sigma_{xn}
-\end{equation}
-
-weather all the errors are independent and random or not, and where $f$ is the function dependent on the variables $x_1, x_2, …, x_n$; $\sigma_{f, x_1, x_2,..., x_n}$ is the standard deviation of $f$, $x_1$, $x_2$, ..., $x_n$. In your report, explicitly show your calculations.
-
-%
 \subsection{Task 1: Saturation voltage}
 The aim of the first task is to determine the saturation voltage of the semiconductor detector. The measurement is performed in vacuum at the smallest possible distance $r_{rel} = 0$ mm, and only for Plutonium.
 \begin{enumerate}[label=\textbf{\alph*)}]
@@ -102,17 +86,10 @@ In this task, an energy calibration of the multi-channel analyzer is performed a
 	\begin{equation}
 		Z \propto \frac{1}{r^2_{eff}},
 	\end{equation}
-	where $Z$ is the count rate in $[1/s]$, can be transformed and cleverly plotted to read the zero-distance directly from the y-axis intercept. Give the averaged result from the measurements of all three isotopes.
+	where $Z$ is the count rate in $[1/s]$, can be transformed and cleverly plotted to read the zero-distance directly from the y-axis intercept. Give the averaged result from the measurements of all three isotopes and present all values in a table.
  
-    \textit{Note}: Looking at the error bars, decide weather to use the mean or the weighted mean with variance-defined weights to obtain the final result of $r_0$. The latter is defined by 
+    \textit{Note}: Looking at the error bars, decide wether to use the mean or the weighted mean with variance-defined weights to obtain the final result of $r_0$. See equation~\eqref{eq:weighted_mean} on page~\pageref{eq:weighted_mean} in the appendix.
 
-    \begin{subequations}\label{eq:weightmean}
-    \begin{align}
-		\overline{r_0} = \frac{\sum_i w_i r_{0,i}}{\sum_i w_i} \\
-        \textnormal{with weights } w_i = \left( \Delta r_{0,i} \right)^{-2} \\
-        \textnormal{and error } \Delta \overline{r_0} = \left( \sum_i w_i \right)^{-1/2}
-    \end{align}
-    \end{subequations}
 \end{enumerate}
 %
 \subsection{Task 3: Range in air}
@@ -143,18 +120,3 @@ In the last part of the experiment, the differential energy loss of alpha radiat
 	\item Estimate the different contributions that go into the energy resolution. Consider the detector resolution from the vacuum and air measurements. Discuss the significance of the electronic noise, the statistical fluctuations in the number of electron-hole pairs (Fano factor), as well as the finite thickness of the source and the energy straggling.
 \end{enumerate}
 
-\noindent
-When writing the report, include an error analysis and add the corresponding error bars to the diagrams. Together with the protocol, submit your original measurement data as a neat \texttt{.txt}-file with appropriate comments so that the data can be assigned to the respective measurements. The structure of the protocol should be based on the following points:
-\begin{itemize}
-	\item Theory section
-	\item Execution and evaluation
-	\begin{itemize}
-		\item What is to be measured and why?
-		\item What measurement results are expected?
-		\item How is the measurement carried out?
-		\item What was actually measured? How large are the measurement errors?
-		\item What can be learned from the measurement result? Were the expectations met?
-		What are the sources of error?
-	\end{itemize}
-	\item Conclusion
-\end{itemize}

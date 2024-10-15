@@ -1,0 +1,49 @@
+\newpage
+\appendix
+%
+\section{Appendix}\label{sec:appendix}
+%
+\subsection{Your Report}
+Together with the report, submit your original measurement data as a neat \texttt{.txt}-file with appropriate comments so that the data can be assigned to the respective measurements. The structure of the protocol should be based on the following points:
+\begin{itemize}
+	\item Theory section
+	\item Execution and evaluation
+	\begin{itemize}
+		\item What is to be measured and why?
+		\item What measurement results are expected?
+		\item How is the measurement carried out?
+		\item What was actually measured? How large are the measurement errors?
+		\item What can be learned from the measurement result? Were the expectations met?
+		What are the sources of error?
+	\end{itemize}
+	\item Conclusion
+\end{itemize}
+%
+\subsubsection*{Error Handling}
+All data in your diagrams should be displayed with both x and y error bars.
+When carrying out the experiment, you will already receive the standard deviations for the measured values from the Gaussian fits. 
+You can make sensible assumptions about the uncertainties of the other measured values. 
+Create tables with measured values and associated uncertainties and explicitly state the formulas used for the calculation.
+For variables that are calculated from several (error-prone) measured values, carry out Gaussian error propagation:
+\begin{equation}\label{eq:RSS}
+	\sigma_{f} = \sqrt{\left( \frac{\partial f}{\partial x_1}\ \sigma_{x_1} \right)^2 + \left( \frac{\partial f}{\partial x_2}\ \sigma_{x_2} \right)^2 + ... + \left( \frac{\partial f}{\partial x_n}\ \sigma_{x_n} \right)^2} 
+\end{equation}
+Here, $\sigma_{f}$ is the uncertainty of the quantity $f = f (x_1, x_2, ... , x_n)$, which is dependent of the measured values $x_1, x_2, ... , x_n$ and their respective uncertainties $\sigma_{x_1}, \sigma_{x_2}, ..., \sigma_{x_n}$. 
+
+Alternatively, estimate the maximum error limits with
+\begin{equation}\label{eq:abs}
+		\sigma_{f} = \left| \frac{\partial f}{\partial x1}\right| \sigma_{x1} + \left| \frac{\partial f}{\partial x2}\right| \sigma_{x2} + ... + \left| \frac{\partial f}{\partial xn}\right| \sigma_{xn}
+\end{equation}
+%
+\subsection{Notes}
+%
+\subsubsection*{Weighted Mean}
+The weighted mean $\overline{x}$ of several measured values $x_i$ of the same quantity $x$ is defined as
+\begin{subequations}\label{eq:weighted_mean}
+    \begin{align}
+    \overline{x} & = \frac{\sum\limits_{i}\ w_i \ x_{i}}{\sum\limits_{i} \ w_i }  \label{eq:wmean}\\
+    \text{with weights } \quad w_i & = (\Delta x_{i})^{-2} \\
+    \text{and error } \quad \Delta \overline{x} & = \left(  \sum\limits_{i} w_i  \right)^{-\frac{1}{2}} \label{eq:wmeanerr}
+    \end{align}
+\end{subequations}
+here, $\Delta x_i$ is the uncertainty of the $i$-th single measurement value.

@@ -3,7 +3,7 @@
 \KOMAoptions{
 	%DIV=calc,
 	DIV=13,
-	fontsize=11pt,
+	fontsize=12pt,
 	paper=a4,
 }
 \linespread{1.2}
@@ -42,7 +42,7 @@
 	filecolor=pflaume,         % color of file links
 	urlcolor=pflaume,        % color of external links
 	pdftitle={Alpha-Spectroscopy with a Semiconductor-Detector},    % title
-	pdfauthor={Dennis Spicker},     % author
+	pdfauthor={Dennis Spicker, Beatriz Artur},     % author
 	pdfsubject={Lab Course Manual},   % subject of the document
 }
 
@@ -77,7 +77,8 @@
 	\thispagestyle{empty}
 	\clearpage
 \end{titlepage}
-
+%
+\setcounter{tocdepth}{2}
 \tableofcontents
 \clearpage
 
@@ -88,6 +89,7 @@
 \input{01_intro.tex}
 \input{02_setup.tex}
 \input{03_tasks.tex}
+\input{zz_appendix.tex}
 
 
 \clearpage
